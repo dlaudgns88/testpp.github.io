@@ -32,8 +32,6 @@ body {
 	background: #D4D2E0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	width: 100%;
-	height: auto;
 }
 
 a {
@@ -418,7 +416,7 @@ a:hover, a:focus {
 .demo-1 main::after {
 	content: '';
 	width: 100%;
-	height: auto;
+	height: 100%;
 	position: fixed;
 	pointer-events: none;
 	top: 0;
