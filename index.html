@@ -38,22 +38,22 @@
 </style>
 
 <body class="demo-1">
-
-	<main>
+	<header>
 		<div class="top-nav">
 			<div id="nav-header">
-
 				<button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
 
-				<div class="w3-sidebar w3-bar-block w3-border-right" style="display: none" id="mySidebar">
+				<div class="w3-sidebar w3-bar-block w3-border-right"
+					style="display: none" id="mySidebar">
 					<button onclick="w3_close()" class="w3-bar-item w3-large">Close
 						&times;</button>
-					<a href="#" class="w3-bar-item w3-button">Home</a> <a href="board.html"
+					<a href="#" class="w3-bar-item w3-button">Home</a> <a
+						href="<%=request.getContextPath()%>/shop"
+						class="w3-bar-item w3-button">PointShop</a> <a
+						href="<%=request.getContextPath()%>/board"
 						class="w3-bar-item w3-button">Board</a>
 				</div>
-
 			</div>
-
 			<div id="nav-blank"></div>
 			<c:set var="nowuser" value="${loginuser }" />
 			<c:choose>
@@ -65,6 +65,9 @@
 			</c:choose>
 			
 		</div>
+	</header>
+	<main>
+
 
 
 		<div id="headerwrap">
