@@ -43,15 +43,11 @@
 			<div id="nav-header">
 				<button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
 
-				<div class="w3-sidebar w3-bar-block w3-border-right"
-					style="display: none" id="mySidebar">
+				<div class="w3-sidebar w3-bar-block w3-border-right" style="display: none" id="mySidebar">
 					<button onclick="w3_close()" class="w3-bar-item w3-large">Close
 						&times;</button>
-					<a href="#" class="w3-bar-item w3-button">Home</a> <a
-						href="<%=request.getContextPath()%>/shop"
-						class="w3-bar-item w3-button">PointShop</a> <a
-						href="<%=request.getContextPath()%>/board"
-						class="w3-bar-item w3-button">Board</a>
+					<a href="#" class="w3-bar-item w3-button">Home</a>
+					<a href="<%=request.getContextPath()%>/board" class="w3-bar-item w3-button">Board</a>
 				</div>
 			</div>
 			<div id="nav-blank"></div>
@@ -63,7 +59,7 @@
 				</c:when>
 
 			</c:choose>
-			
+
 		</div>
 	</header>
 	<main>
@@ -84,89 +80,84 @@
 				</div>
 			</div>
 			<c:choose>
-			<c:when test="${empty nowuser}">
-				<div class="loginbox" id="loginbox">
-					<div class="loginbox2">
-						<div class="loginbox-title">
+				<c:when test="${empty nowuser}">
+					<div class="loginbox" id="loginbox">
+						<div class="loginbox2">
+							<div class="loginbox-title">
 
-							<div class="loginbox-title2"></div>
-							<div class="loginbox-xbox"></div>
+								<div class="loginbox-title2"></div>
+								<div class="loginbox-xbox"></div>
+							</div>
+							<form action="<%=request.getContextPath()%>/login" method="post">
+								<div class="logindata-form">
+									<div class="login-blank"></div>
+									<div class="logindata">
+										<div class="login-id">
+											<label>ID</label> <input class="w3-input" type="text" name="id">
+										</div>
+										<div class="login-pw">
+											<label>Password</label> <input class="w3-input" type="password" name="pw">
+										</div>
+										<div class="login-submit">
+											<div class="login-bt">
+												<input class="w3-input" type="submit" value="Login">
+											</div>
+											<div class="bt-blank"></div>
+											<div class="forgot-bt">
+												<input class="w3-input" type="button" value="ID/PW 찾기">
+											</div>
+										</div>
+									</div>
+									<div class="login-blank"></div>
+								</div>
+							</form>
 						</div>
-						<form action="<%=request.getContextPath()%>/login" method="post">
-							<div class="logindata-form">
-								<div class="login-blank"></div>
-								<div class="logindata">
-									<div class="login-id">
-										<label>ID</label> <input class="w3-input" type="text"
-											name="id">
-									</div>
-									<div class="login-pw">
-										<label>Password</label> <input class="w3-input"
-											type="password" name="pw">
-									</div>
-									<div class="login-submit">
-										<div class="login-bt">
-											<input class="w3-input" type="submit" value="Login">
+					</div>
+					<form action="<%=request.getContextPath()%>/signup" method="post">
+						<div class="signupbox" id="signupbox">
+							<div class="signupbox-title">
+
+								<div class="signupbox-title2"></div>
+								<div class="signupbox-xbox"></div>
+							</div>
+							<div class="signup-blank"></div>
+							<div class="signup-datainput">
+
+								<div class="signup-menu">
+									<label>ID</label> <input class="w3-input" type="text" name="id">
+								</div>
+								<div class="signup-menu">
+									<label>Password</label> <input class="w3-input" type="password" name="pw">
+								</div>
+								<div class="signup-menu">
+									<label>Tel</label> <input class="w3-input" type="text" name="tel">
+								</div>
+								<div class="signup-menu">
+									<label>Address</label> <input class="w3-input" type="text" name="addr">
+								</div>
+								<div class="signup-submit">
+									<div class="submit-blank"></div>
+									<div class="submit-blank2">
+										<div class="blank2-blank"></div>
+										<div class="submit-bt">
+											<input class="w3-input" type="submit" value="회원가입">
 										</div>
-										<div class="bt-blank"></div>
-										<div class="forgot-bt">
-											<input class="w3-input" type="button" value="ID/PW 찾기">
-										</div>
+										<div class="blank2-blank"></div>
 									</div>
 								</div>
-								<div class="login-blank"></div>
-							</div>
-						</form>
-					</div>
-				</div>
-				<form action="<%=request.getContextPath()%>/signup" method="post">
-					<div class="signupbox" id="signupbox">
-						<div class="signupbox-title">
 
-							<div class="signupbox-title2"></div>
-							<div class="signupbox-xbox"></div>
-						</div>
-						<div class="signup-blank"></div>
-						<div class="signup-datainput">
+							</div>
 
-							<div class="signup-menu">
-								<label>ID</label> <input class="w3-input" type="text" name="id">
-							</div>
-							<div class="signup-menu">
-								<label>Password</label> <input class="w3-input" type="password"
-									name="pw">
-							</div>
-							<div class="signup-menu">
-								<label>Tel</label> <input class="w3-input" type="text"
-									name="tel">
-							</div>
-							<div class="signup-menu">
-								<label>Address</label> <input class="w3-input" type="text"
-									name="addr">
-							</div>
-							<div class="signup-submit">
-								<div class="submit-blank"></div>
-								<div class="submit-blank2">
-									<div class="blank2-blank"></div>
-									<div class="submit-bt">
-										<input class="w3-input" type="submit" value="회원가입">
-									</div>
-									<div class="blank2-blank"></div>
-								</div>
-							</div>
 
 						</div>
+					</form>
+				</c:when>
 
 
-					</div>
-				</form>
-			</c:when>
-			
-		
 
-		</c:choose>
+			</c:choose>
 		</div>
-		
+
 
 
 		<div class="isolayer isolayer--scroll1 isolayer--shadow" id="gridmenu" style="margin-left: 15%; width: 100%;">
@@ -995,7 +986,7 @@
 			document.getElementById("mySidebar").style.display = "block";
 			document.getElementById("headerwrap").style.marginLeft = "10%";
 			document.getElementById("gridmenu").style.marginLeft = "25%";
-			$("#signupbox").css("display", "none");	
+			$("#signupbox").css("display", "none");
 			$("#loginbox").css("display", "none");
 		}
 
